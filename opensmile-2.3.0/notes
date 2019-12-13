@@ -1,0 +1,3 @@
+Configure with the following command:
+
+./configure CXXFLAGS="-O2 -mfpmath=sse -march=native -Wno-narrowing" CFLAGS="-O2 -mfpmath=sse -march=native"

@@ -1,0 +1,112 @@
+[ 12.12.2019 - 15:20:00 ]
+    (MSG) [2] in SMILExtract : openSMILE starting!
+[ 12.12.2019 - 15:20:00 ]
+    (MSG) [2] in SMILExtract : config file is: config/liveProsodyAcf.conf
+[ 12.12.2019 - 15:20:00 ]
+    (MSG) [2] in cComponentManager : successfully registered 95 component types.
+[ 12.12.2019 - 15:20:00 ]
+    (ERROR) [0] in commandlineParser : doParse: unknown option '-I' on commandline!
+[ 12.12.2019 - 15:20:01 ]
+    (WARN) [2] in instance 'shs' : Requested input field matching pattern '*Mag_logScale*' not found, check your config! Defaulting to use first field. Available fields:
+  Field name & dimension:
+    pcm_fftMag_octScale 513
+==> LEVEL 'wave'  +++  Buffersize(frames) = 2560  +++  nReaders = 1
+     Period(in seconds) = 0.000063 	 frameSize(in seconds) = 0.000063 (last: 0.000000)
+     BlocksizeRead(frames) = 960 	 BlocksizeWrite(frames) = 800
+     Number of elements: 1 	 Number of fields: 1
+     type = float   noHang = 1   isRingbuffer(isRb) = 1   growDyn = 0
+     Fields: index (range) : fieldname[array indicies]  (# elements)
+       0.       : pcm
+     Fields with info struct set: (index (range) : info struct size in bytes (dt = datatype))
+==> LEVEL 'outp'  +++  Buffersize(frames) = 3  +++  nReaders = 2
+     Period(in seconds) = 0.010000 	 frameSize(in seconds) = 0.050000 (last: 0.000000)
+     BlocksizeRead(frames) = 1 	 BlocksizeWrite(frames) = 1
+     Number of elements: 800 	 Number of fields: 1
+     type = float   noHang = 1   isRingbuffer(isRb) = 1   growDyn = 0
+     Fields: index (range) : fieldname[array indicies]  (# elements)
+       0. - 799. : pcm[0-799]  (800)
+     Fields with info struct set: (index (range) : info struct size in bytes (dt = datatype))
+==> LEVEL 'intens'  +++  Buffersize(frames) = 6  +++  nReaders = 1
+     Period(in seconds) = 0.010000 	 frameSize(in seconds) = 0.050000 (last: 0.000000)
+     BlocksizeRead(frames) = 4 	 BlocksizeWrite(frames) = 1
+     Number of elements: 1 	 Number of fields: 1
+     type = float   noHang = 1   isRingbuffer(isRb) = 1   growDyn = 0
+     Fields: index (range) : fieldname[array indicies]  (# elements)
+       0.       : pcm_loudness
+     Fields with info struct set: (index (range) : info struct size in bytes (dt = datatype))
+==> LEVEL 'win'  +++  Buffersize(frames) = 3  +++  nReaders = 1
+     Period(in seconds) = 0.010000 	 frameSize(in seconds) = 0.050000 (last: 0.000000)
+     BlocksizeRead(frames) = 1 	 BlocksizeWrite(frames) = 1
+     Number of elements: 800 	 Number of fields: 1
+     type = float   noHang = 1   isRingbuffer(isRb) = 1   growDyn = 0
+     Fields: index (range) : fieldname[array indicies]  (# elements)
+       0. - 799. : pcm[0-799]  (800)
+     Fields with info struct set: (index (range) : info struct size in bytes (dt = datatype))
+==> LEVEL 'fftc'  +++  Buffersize(frames) = 3  +++  nReaders = 1
+     Period(in seconds) = 0.010000 	 frameSize(in seconds) = 0.064000 (last: 0.050000)
+     BlocksizeRead(frames) = 1 	 BlocksizeWrite(frames) = 1
+     Number of elements: 1024 	 Number of fields: 1
+     type = float   noHang = 1   isRingbuffer(isRb) = 1   growDyn = 0
+     Fields: index (range) : fieldname[array indicies]  (# elements)
+       0. - 1023. : pcm[0-1023]  (1024)
+     Fields with info struct set: (index (range) : info struct size in bytes (dt = datatype))
+        0. - 1023. : infoSize = 4104 (dt = 513)
+==> LEVEL 'fftmag'  +++  Buffersize(frames) = 3  +++  nReaders = 1
+     Period(in seconds) = 0.010000 	 frameSize(in seconds) = 0.064000 (last: 0.050000)
+     BlocksizeRead(frames) = 1 	 BlocksizeWrite(frames) = 1
+     Number of elements: 513 	 Number of fields: 1
+     type = float   noHang = 1   isRingbuffer(isRb) = 1   growDyn = 0
+     Fields: index (range) : fieldname[array indicies]  (# elements)
+       0. - 512. : pcm_fftMag[0-512]  (513)
+     Fields with info struct set: (index (range) : info struct size in bytes (dt = datatype))
+        0. - 512. : infoSize = 4104 (dt = 514)
+==> LEVEL 'hps'  +++  Buffersize(frames) = 3  +++  nReaders = 1
+     Period(in seconds) = 0.010000 	 frameSize(in seconds) = 0.064000 (last: 0.050000)
+     BlocksizeRead(frames) = 1 	 BlocksizeWrite(frames) = 1
+     Number of elements: 513 	 Number of fields: 1
+     type = float   noHang = 1   isRingbuffer(isRb) = 1   growDyn = 0
+     Fields: index (range) : fieldname[array indicies]  (# elements)
+       0. - 512. : pcm_fftMag_octScale[0-512]  (513)
+     Fields with info struct set: (index (range) : info struct size in bytes (dt = datatype))
+        0. - 512. : infoSize = 4104 (dt = 514)
+==> LEVEL 'pitchShs'  +++  Buffersize(frames) = 3  +++  nReaders = 1
+     Period(in seconds) = 0.010000 	 frameSize(in seconds) = 0.064000 (last: 0.050000)
+     BlocksizeRead(frames) = 1 	 BlocksizeWrite(frames) = 1
+     Number of elements: 15 	 Number of fields: 6
+     type = float   noHang = 1   isRingbuffer(isRb) = 1   growDyn = 0
+     Fields: index (range) : fieldname[array indicies]  (# elements)
+       0.       : nCandidates
+       1. -  4. : F0Cand[0-3]  (4)
+       5. -  8. : candVoicing[0-3]  (4)
+       9. - 12. : candScores[0-3]  (4)
+      13.       : F0raw
+      14.       : voicingClip
+     Fields with info struct set: (index (range) : info struct size in bytes (dt = datatype))
+==> LEVEL 'pitch'  +++  Buffersize(frames) = 6  +++  nReaders = 1
+     Period(in seconds) = 0.010000 	 frameSize(in seconds) = 0.064000 (last: 0.050000)
+     BlocksizeRead(frames) = 4 	 BlocksizeWrite(frames) = 1
+     Number of elements: 2 	 Number of fields: 2
+     type = float   noHang = 1   isRingbuffer(isRb) = 1   growDyn = 0
+     Fields: index (range) : fieldname[array indicies]  (# elements)
+       0.       : F0final
+       1.       : voicingFinalUnclipped
+     Fields with info struct set: (index (range) : info struct size in bytes (dt = datatype))
+==> LEVEL 'smo'  +++  Buffersize(frames) = 3  +++  nReaders = 1
+     Period(in seconds) = 0.010000 	 frameSize(in seconds) = 0.064000 (last: 0.050000)
+     BlocksizeRead(frames) = 1 	 BlocksizeWrite(frames) = 1
+     Number of elements: 3 	 Number of fields: 3
+     type = float   noHang = 1   isRingbuffer(isRb) = 1   growDyn = 0
+     Fields: index (range) : fieldname[array indicies]  (# elements)
+       0.       : F0final_sma
+       1.       : voicingFinalUnclipped_sma
+       2.       : pcm_loudness_sma
+     Fields with info struct set: (index (range) : info struct size in bytes (dt = datatype))
+[ 12.12.2019 - 15:20:01 ]
+    (MSG) [2] in cComponentManager : successfully finished createInstances
+                                 (11 component instances were finalised, 1 data memories were finalised)
+[ 12.12.2019 - 15:20:01 ]
+    (MSG) [2] in cComponentManager : starting single thread processing loop
+[ 12.12.2019 - 15:20:01 ]
+    (MSG) [2] in cPortaudioSource : recording from portAudio device with index 14
+[ 12.12.2019 - 15:20:54 ]
+    (MSG) [2] in cComponentManager : Processing finished! System ran for 5532 ticks.
