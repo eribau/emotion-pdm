@@ -42,7 +42,7 @@ mkdir inst 2> /dev/null
 #export CFLAGS="-O0"
 #export CPPFLAGS="-D_DEBUG -g -D__STATIC_LINK -DOPENSMILE_BUILD -DBUILD_SVMSMO -DBUILD_SVMSMO -DBUILD_LIBSVM -DBUILD_RNN -DBUILD_WITHOUT_EXPERIMENTAL"
 #### non-debug flags:
-export CXXFLAGS="-O2 -mfpmath=sse -msse2"
+export CXXFLAGS="-O2 -mfpmath=sse -march=native -Wno-narrowing"
 export CFLAGS="-O2 -mfpmath=sse -msse2"
 export CPPFLAGS="-D__STATIC_LINK -DOPENSMILE_BUILD -DBUILD_SVMSMO -DBUILD_SVMSMO -DBUILD_LIBSVM -DBUILD_RNN -DBUILD_WITHOUT_EXPERIMENTAL"
 export LDFLAGS="-lrt -lm -lpthread -lc"
@@ -58,7 +58,7 @@ chmod +x update_build_version.sh
 ./update_build_version.sh
 
 make clean &&
-make -j8; make install 
+make -j8; make install
 if [ $? != 0 ]; then
   echo "failed to build or install openSMILE to '$INSTPREFIX'!";
   exit -1;
@@ -67,8 +67,8 @@ fi
 # fully static binary:
 if [ "$STATIC_BIN" = "yes" ]; then
   rm SMILExtract
-  g++ $CXXFLAGS -static -o SMILExtract progsrc/smilextract/SMILExtract-SMILExtract.o .libs/libopensmile.a $LDFLAGS 
-  #-D__STDC_CONSTANT_MACROS 
+  g++ $CXXFLAGS -static -o SMILExtract progsrc/smilextract/SMILExtract-SMILExtract.o .libs/libopensmile.a $LDFLAGS
+  #-D__STDC_CONSTANT_MACROS
   cp SMILExtract inst/bin/SMILExtract
 fi
 ####
@@ -76,4 +76,3 @@ fi
 echo ""
 echo "build successfull. You can now use the inst/bin/SMILExtract binary."
 echo ""
-
