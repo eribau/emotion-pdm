@@ -1,29 +1,19 @@
-[ 16.12.2019 - 20:05:34 ]
+[ 17.12.2019 - 10:30:52 ]
     (MSG) [2] in SMILExtract : openSMILE starting!
-[ 16.12.2019 - 20:05:34 ]
-    (MSG) [2] in SMILExtract : config file is: myconfig/liveProsodyConsole.conf
-[ 16.12.2019 - 20:05:34 ]
+[ 17.12.2019 - 10:30:52 ]
+    (MSG) [2] in SMILExtract : config file is: config/emobase_live4.conf
+[ 17.12.2019 - 10:30:52 ]
     (MSG) [2] in cComponentManager : successfully registered 95 component types.
-[ 16.12.2019 - 20:05:34 ]
-    (WARN) [2] in instance 'shs' : Requested input field matching pattern '*Mag_logScale*' not found, check your config! Defaulting to use first field. Available fields:
-  Field name & dimension:
-    pcm_fftMag_octScale 513
-==> LEVEL 'wave'  +++  Buffersize(frames) = 2560  +++  nReaders = 1
-==> LEVEL 'outp'  +++  Buffersize(frames) = 3  +++  nReaders = 2
-==> LEVEL 'intens'  +++  Buffersize(frames) = 6  +++  nReaders = 1
-==> LEVEL 'win'  +++  Buffersize(frames) = 3  +++  nReaders = 1
-==> LEVEL 'fftc'  +++  Buffersize(frames) = 3  +++  nReaders = 1
-==> LEVEL 'fftmag'  +++  Buffersize(frames) = 3  +++  nReaders = 1
-==> LEVEL 'hps'  +++  Buffersize(frames) = 3  +++  nReaders = 1
-==> LEVEL 'pitchShs'  +++  Buffersize(frames) = 3  +++  nReaders = 1
-==> LEVEL 'pitch'  +++  Buffersize(frames) = 6  +++  nReaders = 1
-==> LEVEL 'smo'  +++  Buffersize(frames) = 3  +++  nReaders = 1
-[ 16.12.2019 - 20:05:34 ]
+[ 17.12.2019 - 10:30:52 ]
+    (MSG) [2] in instance 'arffsink' : writing ARFF header (988 features)...
+[ 17.12.2019 - 10:30:52 ]
     (MSG) [2] in cComponentManager : successfully finished createInstances
-                                 (11 component instances were finalised, 1 data memories were finalised)
-[ 16.12.2019 - 20:05:34 ]
+                                 (25 component instances were finalised, 1 data memories were finalised)
+[ 17.12.2019 - 10:30:52 ]
     (MSG) [2] in cComponentManager : starting single thread processing loop
-[ 16.12.2019 - 20:05:34 ]
+[ 17.12.2019 - 10:30:52 ]
     (MSG) [2] in cPortaudioSource : recording from portAudio device with index 14
-[ 16.12.2019 - 20:05:36 ]
-    (MSG) [2] in cComponentManager : Processing finished! System ran for 221 ticks.
+[ 17.12.2019 - 10:31:19 ]
+    (MSG) [2] in cComponentManager : Processing finished! System ran for 2693 ticks.
+[ 17.12.2019 - 10:31:19 ]
+    (ERROR) [1] in instance 'arffsink' : No output was written! (Maybe the input was too short to extract features from, or the config is broken?)
