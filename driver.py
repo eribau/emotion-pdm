@@ -53,7 +53,11 @@ try:
         line = line.split(" ")
         if(line[2] == 'smo.F0final_sma'):
             # print("sending message!", line[4])
-            msg = oscbuildparse.OSCMessage("/test/F0", None, [line[4]])
+            msg = oscbuildparse.OSCMessage("/test/F0", ",f", [line[4]])
+            osc_send(msg, "osc_client")
+        if(line[2] == 'smo.pcm_loudness_sma'):
+            # print("sending message!", line[4])
+            msg = oscbuildparse.OSCMessage("/test/int", ",f", [line[4]])
             osc_send(msg, "osc_client")
 
         osc_process()
