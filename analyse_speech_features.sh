@@ -23,9 +23,13 @@ for filename in berlin_database_of_emotional_speech/wav/*.wav; do
 		output=unkown
 	fi
 
-	#	echo $emotion
+	#	echo $file
 	# extract features from the file
 	if [ "$output" != "unknown" ]; then
-		SMILExtract -C config/emo_feature_extraction.conf -I berlin_database_of_emotional_speech/wav/$filename -O emotion_analysis/$output.csv
+		SMILExtract -C opensmile-2.3.0/config/emo_feature_extraction.conf -I berlin_database_of_emotional_speech/wav/$file -O emotion_analysis/$output.csv
 	fi
 done
+
+# SMILExtract -C opensmile-2.3.0/config/emo_feature_extraction.conf -I berlin_database_of_emotional_speech/wav/03b01Fa.wav -O emotion_analysis/test.csv
+# SMILExtract -C opensmile-2.3.0/config/emo_feature_extraction.conf -I berlin_database_of_emotional_speech/wav/$filename -O emotion_analysis/$output.csv
+# berlin_database_of_emotional_speech/wav/berlin_database_of_emotional_speech/wav/03b01Fa.wav
