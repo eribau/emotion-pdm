@@ -14,6 +14,10 @@ def intensity(i):
     print("Intensity = ", i)
     pass
 
+def activation(a):
+    print("Activation = ", a)
+    finished = True
+
 # Start the system.
 osc_startup()
 
@@ -25,6 +29,7 @@ osc_udp_server(IP, PORT, "server")
 # argument scheme OSCARG_DATAUNPACK.
 osc_method("/test/F0", pitch)
 osc_method("/test/int", intensity)
+osc_method("/test/act", activation)
 # Too, but request the message address pattern before in argscheme
 
 # Periodically call osc4py3 processing method in your event loop.

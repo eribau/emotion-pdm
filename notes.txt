@@ -1,0 +1,18 @@
+pcm loudness: The loudness as the normalised intensity raised to a power of 0.3.
+
+F0final: The smoothed fundamental frequency contour
+
+F0finEnv: The envelope of the smoothed fundamental frequency contour.
+
+voicingFinalUnclipped: The voicing probability of the final fundamental frequency candidate.
+			Unclipped means, that it was not set to zero when is falls below the voicing threshold.
+
+de: 1st order delta coefficient (differential) of the smoothed low-level descriptor
+
+lpc: Linear predictive coding - Used for for representing the spectral envelope of a digital signal of speech in compressed form (wikipedia)
+
+lps: Line spectral pairs 
+
+linregc1: The slope (m) of a linear approximation of the contour
+
+linreg2c: The offset (t) of a linear approximation of the contour

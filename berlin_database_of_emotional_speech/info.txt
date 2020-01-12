@@ -1,0 +1,48 @@
+filexxx.lablaut contain labels on phoneme level (from ESPS/waves+),
+filexxx.labsilb contain labels on syllable level (from ESPS/waves+),
+filexxx.silb also contain labels for syllables as pure text (no ESPS tags). 
+
+#------------------------------------------------------------------------------------------------------------------#
+Every utterance is named according to the same scheme:
+
+    Positions 1-2: number of speaker
+    Positions 3-5: code for text
+    Position 6: emotion (sorry, letter stands for german emotion word)
+    Position 7: if there are more than two versions these are numbered a, b, c .... 
+
+Example: 03a01Fa.wav is the audio file from Speaker 03 speaking text a01 with the emotion "Freude" (Happiness). 
+
+Information about the speakers:
+    03 - male, 31 years old
+    08 - female, 34 years
+    09 - female, 21 years
+    10 - male, 32 years
+    11 - male, 26 years
+    12 - male, 30 years
+    13 - female, 32 years
+    14 - female, 35 years
+    15 - male, 25 years
+    16 - female, 31 years 
+
+Code of text:
+	code	text(German)										text(English)
+	a01	Der Lappen liegt auf dem Eisschrank.							The tablecloth is lying on the frigde.
+	a02	Das will sie am Mittwoch abgeben.							She will hand it in on Wednesday.
+	a04	Heute abend könnte ich es ihm sagen.							I could tell him tonight.
+	a05	Das schwarze Stück Papier befindet sich da oben neben dem Holzstück.			The black sheet of paper is located up there besides the piece of timber.
+	a07	In sieben Stunden wird es soweit sein.							It will be ready in seven hours.
+	b01	Was sind denn das für Tüten, die da unter dem Tisch stehen?				What about the bags standing there under the table?
+	b02	Sie haben es gerade hochgetragen und jetzt gehen sie wieder runter.			They just carried it upstairs and now they are going down again.
+	b03	An den Wochenenden bin ich jetzt immer nach Hause gefahren und habe Agnes besucht.	I always went home on weekends and visited Agnes.
+	b09	Ich will das eben wegbringen und dann mit Karl was trinken gehen.			I will just discard this and then go for a drink with Karl.
+	b10	Die wird auf dem Platz sein, wo wir sie immer hinlegen.					It will be in the place where we always put it.
+
+Code of emotions:
+	Letter	Emotion
+	W	Ärger (Wut) = anger
+	L	Langeweile = boredom
+	E	Ekel = disgust
+	A	Angst = anxiety/fear
+	F	Freude = happiness
+	T	Trauer = sadness
+	N 	Neutral
