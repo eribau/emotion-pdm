@@ -40,5 +40,8 @@ Thumbs.db
 ###############
 berlin_database_of_emotional_speech/
 emotion_analysis/
+emotion_analysis2/
 plots/
+plots2/
 interesting_plots/
+venv/

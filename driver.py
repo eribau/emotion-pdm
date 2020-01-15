@@ -7,9 +7,19 @@ from osc4py3 import oscbuildparse
 IP = "127.0.0.1"
 PORT = "6503"
 
-features = {"f0_mean": 0, "f0_var": 0, "f0_max": 0, "loud_mean": 0}
+features = {"f0_mean": 0,
+            "f0_var": 0,
+            "f0_max": 0,
+            "loud_mean": 0,
+            "speech_rate": 0,
+            "f1_mean": 0}
 # ranges [min, max] (e.g. ranges["features"][0] = min and ranges["features"][0] = max)
-ranges = {"f0_mean": [0, 450], "f0_var": [0, 150], "f0_max": [0, 450], "loud_mean": [-1, 0]}
+ranges = {  "f0_mean": [0, 450],
+            "f0_var": [50, 180],
+            "f0_max": [0, 450],
+            "loud_mean": [-0.01, 0.01],
+            "speech_rate": [0, 6],
+            "f1_mean": [300, 3000]}
 
 num_of_features = len(features)
 ready_to_send = 0
@@ -63,13 +73,27 @@ try:
             features["f0_var"] = f0_var_norm
             ready_to_send += 1
             print("f0_var = ", f0_var_norm)
+        if(line[2] == 'func.speakingRate_sma_de_amean'):
+            speech_rate = float(line[4])
+            speech_rate_norm = norm(speech_rate, "speech_rate")
+            features["speech_rate"] = speech_rate_norm
+            ready_to_send += 1
+            print("speech rate = ", speech_rate_norm)
+        if(line[2] == 'func.formantFreqLpc_sma_de[1]_amean'):
+            f1_mean = float(line[4])
+            f1_mean_norm = norm(f1_mean, "f1_mean")
+            features["f1_mean"] = f1_mean_norm
+            ready_to_send += 1
+            print("f1 mean = ", f1_mean_norm)
 
         if(ready_to_send == num_of_features):
-            activation = (0.62 * features["f0_mean"]) * (0.62 * features["f0_var"]) * (0.68 * features["f0_max"])  * (0.8 * features["loud_mean"])
-            valence = (-0.21 * features["f0_mean"]) * (0.08 * features["f0_var"]) * (-0.09 * features["f0_max"]) * (-0.26 * features["loud_mean"])
+            # activation = (0.62 * features["f0_mean"]) * (0.62 * features["f0_var"]) * (0.68 * features["f0_max"])  * (0.8 * features["loud_mean"])
+            # valence = (-0.21 * features["f0_mean"]) * (0.08 * features["f0_var"]) * (-0.09 * features["f0_max"]) * (-0.26 * features["loud_mean"])
+            activation = (0.2 * features["f0_var"]) + (0.54 * features["loud_mean"]) + (0.25 * features["f1_mean"])  + (0.01 * features["speech_rate"])
+            valence = (0.54 * features["f0_var"]) + (0.07 * features["loud_mean"]) + (0.04 * features["f1_mean"]) + (0.35 * features["speech_rate"])
 
-            activation = activation * 2 - 1
-            valence = valence * 2 - 1
+            activation = (activation * 2 - 1) + 0.5
+            valence = valence * 2 - 1 + 0.5
 
             print("Activation = ", activation, " Valence = ", valence)
             act_msg = oscbuildparse.OSCMessage("/test/act", ",f", [activation])
