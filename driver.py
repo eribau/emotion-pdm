@@ -11,7 +11,7 @@ features = {"f0_mean": 0,
             "f0_var": 0,
             "f0_max": 0,
             "loud_mean": 0,
-            "speech_rate": 0,
+            # "speech_rate": 0,
             "f1_mean": 0,
             "zcr": 0}
 # ranges [min, max] (e.g. ranges["features"][0] = min and ranges["features"][0] = max)
@@ -19,9 +19,9 @@ ranges = {  "f0_mean": [0, 450],
             "f0_var": [30, 180],
             "f0_max": [0, 450],
             "loud_mean": [0, 1],
-            "speech_rate": [0, 12],
+            # "speech_rate": [0, 12],
             "f1_mean": [300, 3000],
-            "zcr": [40, 200]}
+            "zcr": [20, 200]}
 
 num_of_features = len(features)
 ready_to_send = 0
@@ -75,12 +75,12 @@ try:
             features["f0_var"] = f0_var_norm
             ready_to_send += 1
             print("f0_var = ", f0_var_norm)
-        if(line[2] == 'func.speakingRate_sma_amean'):
-            speech_rate = float(line[4])
-            speech_rate_norm = norm(speech_rate, "speech_rate")
-            features["speech_rate"] = speech_rate_norm
-            ready_to_send += 1
-            print("speech rate = ", speech_rate_norm)
+        # if(line[2] == 'func.speakingRate_sma_amean'):
+        #     speech_rate = float(line[4])
+        #     speech_rate_norm = norm(speech_rate, "speech_rate")
+        #     features["speech_rate"] = speech_rate_norm
+        #     ready_to_send += 1
+        #     print("speech rate = ", speech_rate_norm)
         if(line[2] == 'func.formantFreqLpc_sma[1]_amean'):
             f1_mean = float(line[4])
             f1_mean_norm = norm(f1_mean, "f1_mean")
