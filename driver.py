@@ -16,12 +16,12 @@ features = {"f0_mean": 0,
             "zcr": 0}
 # ranges [min, max] (e.g. ranges["features"][0] = min and ranges["features"][0] = max)
 ranges = {  "f0_mean": [0, 450],
-            "f0_var": [30, 180],
+            "f0_var": [45, 180],
             "f0_max": [0, 450],
             "loud_mean": [0, 1],
             # "speech_rate": [0, 12],
             "f1_mean": [300, 3000],
-            "zcr": [20, 200]}
+            "zcr": [20, 220]}
 
 num_of_features = len(features)
 ready_to_send = 0
@@ -62,13 +62,13 @@ try:
             f0_mean_norm = norm(f0_mean, "f0_mean")
             features["f0_mean"] = f0_mean_norm
             ready_to_send += 1
-            print("f0_mean = ", f0_mean_norm)
+            # print("f0_mean = ", f0_mean_norm)
         if(line[2] == 'func.F0_sma_max'):
             f0_max = float(line[4])
             f0_max_norm = norm(f0_max, "f0_max")
             features["f0_max"] = f0_max_norm
             ready_to_send += 1
-            print("f0_max = ", f0_max_norm)
+            # print("f0_max = ", f0_max_norm)
         if(line[2] == 'func.F0_sma_stddev'):
             f0_var = float(line[4])
             f0_var_norm = norm(f0_var, "f0_var")
