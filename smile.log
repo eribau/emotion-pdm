@@ -1,15 +1,15 @@
-[ 15.01.2020 - 20:52:31 ]
+[ 20.01.2020 - 10:08:31 ]
     (MSG) [2] in SMILExtract : openSMILE starting!
-[ 15.01.2020 - 20:52:31 ]
+[ 20.01.2020 - 10:08:31 ]
     (MSG) [2] in SMILExtract : config file is: opensmile-2.3.0/myconfig/emobase_console.conf
-[ 15.01.2020 - 20:52:31 ]
+[ 20.01.2020 - 10:08:31 ]
     (MSG) [2] in cComponentManager : successfully registered 95 component types.
-[ 15.01.2020 - 20:52:31 ]
+[ 20.01.2020 - 10:08:31 ]
     (MSG) [2] in cComponentManager : successfully finished createInstances
                                  (27 component instances were finalised, 1 data memories were finalised)
-[ 15.01.2020 - 20:52:31 ]
+[ 20.01.2020 - 10:08:31 ]
     (MSG) [2] in cComponentManager : starting single thread processing loop
-[ 15.01.2020 - 20:52:31 ]
-    (MSG) [2] in cPortaudioSource : recording from portAudio device with index 9
-[ 15.01.2020 - 20:53:25 ]
-    (MSG) [2] in cComponentManager : Processing finished! System ran for 5301 ticks.
+[ 20.01.2020 - 10:08:31 ]
+    (MSG) [2] in cPortaudioSource : recording from portAudio device with index 7
+[ 20.01.2020 - 10:11:14 ]
+    (MSG) [2] in cComponentManager : Processing finished! System ran for 15500 ticks.

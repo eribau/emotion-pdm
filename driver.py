@@ -13,7 +13,8 @@ features = {"f0_mean": 0,
             "loud_mean": 0,
             # "speech_rate": 0,
             "f1_mean": 0,
-            "zcr": 0}
+            "zcr": 0,
+            "spch_var": 0}
 # ranges [min, max] (e.g. ranges["features"][0] = min and ranges["features"][0] = max)
 ranges = {  "f0_mean": [0, 450],
             "f0_var": [45, 180],
@@ -21,7 +22,8 @@ ranges = {  "f0_mean": [0, 450],
             "loud_mean": [0, 1],
             # "speech_rate": [0, 12],
             "f1_mean": [300, 3000],
-            "zcr": [20, 220]}
+            "zcr": [20, 220],
+            "spch_var": [0, 4]}
 
 num_of_features = len(features)
 ready_to_send = 0
@@ -93,12 +95,18 @@ try:
             features["zcr"] = zcr_mean_norm
             ready_to_send += 1
             print("zcr = ", zcr_mean_norm)
+        if(line[2] == 'func.speakingRate_sma_stddev'):
+            spch_var = float(line[4])
+            spch_var_norm = norm(spch_var, "spch_var")
+            features["spch_var"] = spch_var_norm
+            ready_to_send += 1
+            print("spch_var = ", spch_var)
 
         if(ready_to_send == num_of_features):
             # activation = (0.62 * features["f0_mean"]) * (0.62 * features["f0_var"]) * (0.68 * features["f0_max"])  * (0.8 * features["loud_mean"])
             # valence = (-0.21 * features["f0_mean"]) * (0.08 * features["f0_var"]) * (-0.09 * features["f0_max"]) * (-0.26 * features["loud_mean"])
             activation = (0.2 * features["f0_var"]) + (0.54 * features["loud_mean"]) + (0.25 * features["f1_mean"])  + (0.01 * features["zcr"])
-            valence = (0.54 * features["f0_var"]) + (0.07 * features["loud_mean"]) + (0.04 * features["f1_mean"]) + (0.35 * features["zcr"])
+            valence = (0.5 * features["f0_var"]) + (0.07 * features["loud_mean"]) + (0.04 * features["f1_mean"]) + (0.25 * features["zcr"] + (0.14))
 
             activation = (activation * 2 - 1)
             valence = valence * 2 - 1
